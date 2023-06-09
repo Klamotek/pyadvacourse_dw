@@ -1,0 +1,33 @@
+# https://peps.python.org/pep-0517/
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# https://peps.python.org/pep-0621/
+[project]
+name = "pyadvacourse_dw"
+description = "Test"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "BSD 3-Clause License" }
+authors = [
+    { email = "dawid.warmus@unibe.ch", name = "Dawid" },
+]
+dynamic = ["version"]
+dependencies = []
+
+[tool.hatch.version]
+path = "src/pyadvacourse_dw/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["src"]
+sources = ["src"]
+
+# extras
+# https://peps.python.org/pep-0621/#dependencies-optional-dependencies
+[project.optional-dependencies]
+test = ["pytest>=6.0"]
+
+[project.urls]
+homepage = "https://github.com/Klamotek/pyadvacourse_dw"
+repository = "https://github.com/Klamotek/pyadvacourse_dw"
